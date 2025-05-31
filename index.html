@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyHealth Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="main-nav">
+    <div class="brand">💖 MyHealth Portal</div>
+    <ul>
+      <li><a href="#dashboard" onclick="showSection('dashboard')">Dashboard</a></li>
+      <li><a href="#log" onclick="showSection('log')">Log Entry</a></li>
+      <li><a href="#history" onclick="showSection('history')">History</a></li>
+      <li><a href="#tips" onclick="showSection('tips')">Tips</a></li>
+      <li><a href="#settings" onclick="showSection('settings')">Settings</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="dashboard" class="section">
+      <h1>Welcome Back!</h1>
+      <p>Your health journey starts here. You’ve logged <span id="entryCount">0</span> entries so far.</p>
+    </section>
+
+    <section id="log" class="section">
+      <h2>Log Your Health</h2>
+      <form id="journalForm">
+        <label>Date:</label>
+        <input type="date" id="date" required>
+
+        <label>Mood:</label>
+        <select id="mood" required>
+          <option>Happy</option>
+          <option>Sad</option>
+          <option>Stressed</option>
+          <option>Energetic</option>
+          <option>Tired</option>
+        </select>
+
+        <label>Symptoms:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Headache"> Headache</label>
+          <label><input type="checkbox" value="Fatigue"> Fatigue</label>
+          <label><input type="checkbox" value="Cough"> Cough</label>
+          <label><input type="checkbox" value="None"> None</label>
+        </div>
+
+        <label>Notes:</label>
+        <textarea id="notes" placeholder="Anything else you'd like to note..."></textarea>
+
+        <button type="submit">Save Entry</button>
+      </form>
+    </section>
+
+    <section id="history" class="section">
+      <h2>Your Past Entries</h2>
+      <div id="entryList" class="entry-list"></div>
+    </section>
+
+    <section id="tips" class="section">
+      <h2>Wellness Tips</h2>
+      <div id="tipsBox">
+        <p>Select your mood and log an entry to see custom health tips!</p>
+      </div>
+    </section>
+
+    <section id="settings" class="section">
+      <h2>Settings</h2>
+      <label>Choose Theme:</label>
+      <select id="themeSelector">
+        <option value="light">🌞 Light</option>
+        <option value="dark">🌙 Dark</option>
+      </select>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
